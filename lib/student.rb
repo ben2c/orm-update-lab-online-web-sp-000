@@ -26,4 +26,15 @@ class Student
   def self.drop_table
     DB[:conn].execute("DROP TABLE IF EXISTS students")
   end
+
+  def save
+    if self.id 
+      self.update 
+    end
+  end
+
+  def update 
+    sql = 'UPDATE students SET name = ?, grade = ? WHERE id = ?'
+    DB[:conn].execute(sql, self.name, self.grade, self.id)
+  end
 end
