@@ -28,12 +28,12 @@ class Student
   end
 
   def save
-    if self.id 
-      self.update 
+    if self.id
+      self.update
     end
   end
 
-  def update 
+  def update
     sql = 'UPDATE students SET name = ?, grade = ? WHERE id = ?'
     DB[:conn].execute(sql, self.name, self.grade, self.id)
   end
