@@ -55,7 +55,7 @@ class Student
     id = arr[0]
     name = arr[1]
     grade = arr[2]
-    self.new(id, name, grade)
+    Student.new(id, name, grade)
   end
 
 
